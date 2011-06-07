@@ -1,0 +1,15 @@
+( facil DAY 05.04.2001 )
+
+api: TimGetSeconds
+api: TimSecondsToDateTime
+
+create time 7 2* allot
+
+: TIME&DATE 
+( -- sec min hr day mt year )
+     TimGetSeconds
+     time >abs 
+     TimSecondsToDateTime
+     6 0 do time i 2* + w@ loop
+;
+

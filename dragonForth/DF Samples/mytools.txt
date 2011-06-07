@@ -1,0 +1,21 @@
+( mytools 23.Apr.2011 )
+
+\ 工具系统信息定义
+: hello ." 欢迎使用狐狸的工具箱！" cr ;
+
+: busload s" bus" included ;
+: marksload s" marks" included ;
+: noticeload s" notice" included ;
+: foload s" fo" included ;
+: moneyload s" money" included ;
+: bookload s" copybook" included ;
+: remindload s" remind" included ;
+
+: help 
+  ." 显示帮助 help" cr
+  ." 货币转换 moneyload" cr
+  ." 复印价格 bookload" cr
+  ." 提示助手 remindload" cr
+  ." 通知作业 noticeload" cr
+;
+help 
