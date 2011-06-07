@@ -2,32 +2,29 @@
 
 "human"
 \ PPT演示程序
-  29 value 行宽
-  10 value 列高
-  : 居中  ( addr n -- )
+
+29 value 行宽
+10 value 列高
+
+: 居中  ( addr n -- )
     dup 行宽 swap 
     -
     2 / 
     \ .s cr
-     2 *
+     2 *  \ 原本的空格不能达到正确宽度，所以采用扩大办法
     spaces type cr
-   ;
+    ;
 
-  : 行标尺 ( -- )
+: 行标尺 ( -- )  \ 测试用
    4 1 ?do 
   ." 1234567890"
   loop
   cr
   ;
 
-: t1 12 spaces ." yyy" cr ;
-: t2 
-   s" 我是fox!" 居中
-  ;
-
 : 新页 ( -- )   page ;  
 
-  : 行 ( n -- ) 
+: 行 ( n -- ) 
   列高 swap -
   2 /
   0 ?do cr loop 
