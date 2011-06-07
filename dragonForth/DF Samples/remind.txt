@@ -1,6 +1,6 @@
 ( remind Day 7.Jun.2011 )
 
-
+"human"
 \ 生活准备
 
 : 有 cr  ." 您准备好 ";
@@ -97,3 +97,4 @@
   ." vip办公室提醒" cr
 ;
 helpwarning 
+

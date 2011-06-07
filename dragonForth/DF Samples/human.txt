@@ -1,0 +1,7 @@
+( human day 7.Jun.2011 )
+
+\ human interface for dragon forth when use chinese
+
+ : 换行 cr ;
+ : 若水说  换行 ." [若水]说：" ;
+: 候键 key drop ;

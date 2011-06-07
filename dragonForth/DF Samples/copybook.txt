@@ -1,5 +1,6 @@
 ( copybook Day 7.Jun.2011 )
 
+"human"
 \ 印书计算
 \ 印书基础单价
 variable copyfee 
@@ -38,3 +39,4 @@ variable copyfee
   ." 复印 231 页 书 32 本 总计" cr
 ;
 helpcopybook
+
