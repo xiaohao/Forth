@@ -1,0 +1,35 @@
+( ppt 7.Jun.2011 )
+
+"human"
+\ PPT演示程序
+  29 value 行宽
+  10 value 列高
+  : 居中  ( addr n -- )
+    dup 行宽 swap 
+    -
+    2 / 
+    \ .s cr
+     2 *
+    spaces type cr
+   ;
+
+  : 行标尺 ( -- )
+   4 1 ?do 
+  ." 1234567890"
+  loop
+  cr
+  ;
+
+: t1 12 spaces ." yyy" cr ;
+: t2 
+   s" 我是fox!" 居中
+  ;
+
+: 新页 ( -- )   page ;  
+
+  : 行 ( n -- ) 
+  列高 swap -
+  2 /
+  0 ?do cr loop 
+  ;
+
