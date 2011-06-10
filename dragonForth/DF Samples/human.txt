@@ -2,6 +2,7 @@
 
 \ human interface for dragon forth when use chinese
 
- : 换行 cr ;
- : 若水说  换行 ." [若水]说：" ;
+: 换行 cr ;
+: 若水说  换行 ." [若水]说：" ;
 : 候键 key drop ;
+: helpmsg 若水说 ." 你可以这样使用["  type ." 功能]:" cr ;
