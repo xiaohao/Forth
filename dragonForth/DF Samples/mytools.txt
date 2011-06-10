@@ -1,12 +1,48 @@
 ( mytools 23.Apr.2011 )
 
+CREATE filename 100  CHARS ALLOT
+filename 100 ERASE
+0 value 原始长度
+0 value 增加长度
+
+: 加txt后缀  ( addr n -- addr1 n1 )
+    ( addr         ) to 原始长度
+    ( addr addr' n ) filename 原始长度 
+    (              ) MOVE
+    ( addr2 n2     ) s" .txt" 
+    ( addr2        ) to 增加长度
+    ( addr2  )  
+    ( addr2 addr3+n ) filename 原始长度 CHARS +  
+    ( addr2 addr3' n2 ) 增加长度
+    (                 ) MOVE
+    ( addr' n+n2      ) filename 原始长度 增加长度 +
+    ;   
+
+: DF系统? ( -- T/F )  \ 判断系统
+  cell 4 = IF 
+    -1  \ Palm的Dragon Forth是cell = 4
+  else
+    0   \ Gforth 是cell = 8 
+  then
+  ;
+: 加载 ( addr n -- )  \  双系统共用加载功能
+  DF系统? IF
+    included
+  else
+    加txt后缀  
+    included
+  then
+  ;
+
+s" human" 加载
+
 \ 工具系统信息定义
 : hello ." 欢迎使用狐狸的工具箱！" cr ;
 
-: busload s" bus" included ;
-: marksload s" marks" included ;
-: noticeload s" notice" included ;
-: foload s" fo" included ;
+: busload s" bus" 加载 ;
+: marksload s" marks" 加载 ;
+: noticeload s" notice" 加载 ;
+: foload s" fo" 加载 ;
 \ 货币转换
 
 \ 基本词汇定义
